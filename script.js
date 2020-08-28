@@ -6,7 +6,7 @@ var choiceA= document.querySelector (".a");
 var choiceB= document.querySelector (".b");
 var choiceC= document.querySelector (".c");
 var choiceD= document.querySelector (".d");
-var timer= document.querySelector ("#timmer");
+var timer= document.querySelector ("#timer");
 var score= document.querySelector ("hsBtn");
 
 
@@ -58,12 +58,16 @@ let questions = [
 
 //variables for the questions to help array of object loop
 
-const lastQuestion = questions.length;
-let runQuestion=0;
+var lastQuestion = questions.length;
+var runQuestion=0;
+var count = 0;
+var questionTimmer = 15;
+var time;
+var score=0;
 
 //render question
 function displayQuestion(){
-    let q=questions[runQuestion];
+    var q=questions[runQuestion];
     question.textContent = q.question;
     choiceA.textContent = q.choiceA;
     choiceB.textContent = q.choiceB;
@@ -72,12 +76,46 @@ function displayQuestion(){
 }
 
 
+//timer
+function counter(){
+    if (count<=questionTimmer){
+        timer.textContent = "Time: " +count;
+        count++
+        
+    }else{
+        count=0;
+        answerIsWrong();
+        if(runQuestion < lastQuestion){
+            runQuestion++;
+            displayQuestion();
+        }else{
+            clearInterval(time);
+            
+        }
+    }
+}
+
+
+// answer is correct
+function answerIsCorrect(){
+    document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
+}
+
+
+// answer is Wrong
+function answerIsWrong(){
+    document.getElementById(runningQuestion).style.backgroundColor = "#f00";
+}
+
+
+
+
+//show questions when clicked
 function startQuiz(){
     begin.getElementsByClassName.display ="none";
     displayQuestion();
-    answers.getElementsByClassName.display="block"
-    
+    answers.getElementsByClassName.display="block";
+    counter();
+    time = setInterval(counter,1000);
 }
-
 begin.addEventListener("click", startQuiz);
-
