@@ -15,8 +15,8 @@ var score= document.querySelector ("hsButn");
 let questions = [
     {
     question:"What does HTML stand for",
-    choiceA:"",
-    choiceB:"",
+    choiceA:"helix time module language",
+    choiceB:"Helping Text Manual Language",
     choiceC:"",
     choiceD:"",
     correct:""
@@ -58,17 +58,16 @@ let questions = [
 
 //variables for the questions to help array of object loop
 
-const lastQuestion = questions.length -1;
+const lastQuestion = questions.length;
 let runQuestion=0;
 
 //render question
 function displayQuestion(){
     let q=questions[runQuestion];
-    question.textContent = q.question;
-    choiceA.innerHTML = q.choiceA;
-    choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
-    choiceD.innerHTML = q.choiceD;
-
+    question.textContent += q.question;
+    choiceA.textContent = q.choiceA;
+    choiceB.textContent = q.choiceB;
+    choiceC.textContent = q.choiceC;
+    choiceD.textContent = q.choiceD;
 }
 displayQuestion();
