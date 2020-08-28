@@ -18,6 +18,7 @@
 }
 #questions{
     color: white;
+    font-size: 30px;
     background-color: teal;
     font-weight: bolder;
     text-align: center;
@@ -40,7 +41,7 @@ body{
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
     padding: 10px;
-    box-shadow: 0 0 20px 2px;
+    box-shadow: 0 10px 10px 1px;
   
 }
 .btn-grid {
@@ -58,11 +59,18 @@ body{
     background-color:white;
      
 }
+.start-btn{
+    color: white;
+    background-color: rgb(0, 0, 0);
+    font-weight: bolder;
+    height: 50px;
+    width: 100px;
+    float: right; 
+    padding: 10px;
+    border-radius: 20px;
+}
 .btn{
     border:none;
     padding: 5px 10px;
 
-}
-.hide{
-    display: none;
 }

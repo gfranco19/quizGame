@@ -1,13 +1,13 @@
 //select all elements
-var begin= document.querySelector (".start-button");
-var next= document.querySelector ("next-btn");
+var begin= document.querySelector (".start-btn");
 var question= document.querySelector ("#questions");
+var answers= document.querySelector ("#answers");
 var choiceA= document.querySelector (".a");
 var choiceB= document.querySelector (".b");
 var choiceC= document.querySelector (".c");
 var choiceD= document.querySelector (".d");
 var timer= document.querySelector ("#timmer");
-var score= document.querySelector ("hsButn");
+var score= document.querySelector ("hsBtn");
 
 
 //create questions
@@ -19,7 +19,7 @@ let questions = [
     choiceB:"B) Helping Text Manual Language",
     choiceC:"C) Hyper Text Markup Language",
     choiceD:"D) Honer Type Madeup Language",
-    correct:""
+    correct:"c"
 
 },{
     question:"",
@@ -70,4 +70,14 @@ function displayQuestion(){
     choiceC.textContent = q.choiceC;
     choiceD.textContent = q.choiceD;
 }
-displayQuestion();
+
+
+function startQuiz(){
+    begin.getElementsByClassName.display ="none";
+    displayQuestion();
+    answers.getElementsByClassName.display="block"
+    
+}
+
+begin.addEventListener("click", startQuiz);
+
