@@ -1,23 +1,26 @@
 #top-div {
    
-    font-weight: bolder;
+    font-weight: bold;
     margin-left: 20px;
-    color: rgb(136, 8, 255);
+    color: rgb(70, 0, 136);
     margin-top: 10px;
     width: 100vw;  
     height: 100vh; 
-   
-   
     float: left;
-   
     padding: 0;
     justify-content: left;
 }
 #timmer{
     margin-top: 10px;
-    position: absolute;
-    float:right;
-
+    float:left;
+    color: rgb(70, 0, 136);
+    font-weight: bold;
+}
+#questions{
+    color: white;
+    background-color: teal;
+    font-weight: bolder;
+    text-align: center;
 }
 body{
     background-color: rgb(255, 255, 255);
@@ -37,6 +40,7 @@ body{
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
     padding: 10px;
+    box-shadow: 0 0 20px 2px;
   
 }
 .btn-grid {
@@ -48,7 +52,8 @@ body{
 }
 
 .Answer-btn{
-    text-align: left;
+    font-weight: bolder;
+    text-align: center;
     border: none;
     background-color:white;
      
