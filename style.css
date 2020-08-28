@@ -1,0 +1,48 @@
+#top-div {
+   
+    font-weight: bolder;
+    margin-left: 20px;
+    color: rgb(136, 8, 255);
+    margin-top: 10px;
+    width: 100vw;  
+    height: 100vh; 
+   
+   
+    float: left;
+   
+    padding: 0;
+    justify-content: left;
+}
+#timmer{
+    margin-top: 10px;
+    position: absolute;
+    float:right;
+
+}
+body{
+    background-color: rgb(255, 255, 255);
+    color: rgb(46, 41, 34);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-container{
+    position: absolute;
+    width: 100%;
+    max-width: 80%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 10px;
+  
+}
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px; 
+    margin: 20px 0;
+
+}
