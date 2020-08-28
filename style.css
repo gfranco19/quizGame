@@ -46,3 +46,18 @@ body{
     margin: 20px 0;
 
 }
+
+.Answer-btn{
+    text-align: left;
+    border: none;
+    background-color:white;
+     
+}
+.btn{
+    border:none;
+    padding: 5px 10px;
+
+}
+.hide{
+    display: none;
+}
