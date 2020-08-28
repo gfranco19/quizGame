@@ -19,7 +19,15 @@ let questions = [
     choiceB:"B) Helping Text Manual Language",
     choiceC:"C) Hyper Text Markup Language",
     choiceD:"D) Honer Type Madeup Language",
-    correct:"c"
+    correctAnsw:".c"
+
+},{
+    question:"Which one is a propper function?",
+    choiceA:"function;",
+    choiceB:"'function';",
+    choiceC:"function));",
+    choiceD:"function();",
+    correctAnsw:".d"
 
 },{
     question:"",
@@ -27,7 +35,7 @@ let questions = [
     choiceB:"",
     choiceC:"",
     choiceD:"",
-    correct:""
+    correctAnsw:""
 
 },{
     question:"",
@@ -35,7 +43,7 @@ let questions = [
     choiceB:"",
     choiceC:"",
     choiceD:"",
-    correct:""
+    correctAnsw:""
 
 },{
     question:"",
@@ -43,15 +51,7 @@ let questions = [
     choiceB:"",
     choiceC:"",
     choiceD:"",
-    correct:""
-
-},{
-    question:"",
-    choiceA:"",
-    choiceB:"",
-    choiceC:"",
-    choiceD:"",
-    correct:""
+    correctAnsw:""
 
 }
 ];
@@ -64,7 +64,7 @@ var count = 0;
 var questionTimmer = 15;
 var time;
 var score=0;
-
+var correct;
 //render question
 function displayQuestion(){
     var q=questions[runQuestion];
@@ -84,7 +84,7 @@ function counter(){
         
     }else{
         count=0;
-        answerIsWrong();
+       
         if(runQuestion < lastQuestion){
             runQuestion++;
             displayQuestion();
@@ -96,15 +96,22 @@ function counter(){
 }
 
 
-// answer is correct
-function answerIsCorrect(){
-    document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
-}
+// This function checks the response to each answer 
+function checkAnswer(answer){
+    correct = questions[runQuestion].correctAnsw;
 
-
-// answer is Wrong
-function answerIsWrong(){
-    document.getElementById(runningQuestion).style.backgroundColor = "#f00";
+    if (answer === correct && runQuestion !== lastQuestion){
+        score++;
+        alert("That Is Correct!");
+        runQuestion++;
+        displayQuestion();
+        //display in the results div that the answer is correct.
+    }else if (answer !== correct && runQuestion !== lastQuestion){
+        alert("That Is Incorrect.")
+        runQuestion++;
+        displayQuestion();
+        //display in the results div that the answer is wrong.
+    }
 }
 
 
@@ -117,5 +124,10 @@ function startQuiz(){
     answers.getElementsByClassName.display="block";
     counter();
     time = setInterval(counter,1000);
+    
 }
+choiceA.addEventListener("click",checkAnswer);
+choiceB.addEventListener("click",checkAnswer);
+choiceC.addEventListener("click",checkAnswer);
+choiceD.addEventListener("click",checkAnswer);
 begin.addEventListener("click", startQuiz);
