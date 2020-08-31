@@ -74,3 +74,22 @@ body{
     padding: 5px 10px;
 
 }
+.finish-btn{
+    color: white;
+    background-color: rgb(2, 27, 109);
+    font-weight: bolder;
+    height: 50px;
+    margin-right: 10px;
+    width: 100px;
+    float: right; 
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#intro{
+    font-weight: bolder;
+    justify-content: center;
+}
+#score{
+    display: none;
+}

@@ -7,7 +7,9 @@ var choiceB= document.querySelector (".b");
 var choiceC= document.querySelector (".c");
 var choiceD= document.querySelector (".d");
 var timer= document.querySelector ("#timer");
-var score= document.querySelector ("hsBtn");
+var score= document.querySelector ("#score");
+var finishBtn= document.querySelector (".finish-btn");
+
 
 
 //create questions
@@ -23,35 +25,35 @@ let questions = [
 
 },{
     question:"Which one is a propper function?",
-    choiceA:"function;",
-    choiceB:"'function';",
-    choiceC:"function));",
-    choiceD:"function();",
+    choiceA:"A) function;",
+    choiceB:"B) 'function';",
+    choiceC:"C) function));",
+    choiceD:"D) function();",
     correctAnsw:"d"
 
 },{
-    question:"",
-    choiceA:"",
-    choiceB:"",
-    choiceC:"",
-    choiceD:"",
-    correctAnsw:""
+    question:"What is the first step in any coding project?",
+    choiceA:"A) Html",
+    choiceB:"B) Psuedo code",
+    choiceC:"C) Css",
+    choiceD:"D) Java",
+    correctAnsw:"b"
 
 },{
-    question:"",
-    choiceA:"",
-    choiceB:"",
-    choiceC:"",
-    choiceD:"",
-    correctAnsw:""
+    question:"What function can you use to help with testing and debugging your code?",
+    choiceA:"A) console.log();",
+    choiceB:"B) inspect ();",
+    choiceC:"C) check();",
+    choiceD:" Window();",
+    correctAnsw:"a"
 
 },{
-    question:"",
-    choiceA:"",
-    choiceB:"",
-    choiceC:"",
-    choiceD:"",
-    correctAnsw:""
+    question:"how do you mark notes in a Html file?",
+    choiceA:"A) //",
+    choiceB:"B) --",
+    choiceC:"C) <!-- -->",
+    choiceD:"!<-- -->",
+    correctAnsw:"c"
 
 }
 ];
@@ -61,7 +63,7 @@ let questions = [
 var lastQuestion = questions.length;
 var runQuestion=0;
 var count = 0;
-var questionTimmer = 15;
+var questionTimmer = 120;
 var time;
 var score=0;
 var correct;
@@ -115,6 +117,18 @@ function checkAnswer(event){
     }
 }
 
+//to finish quiz and show score
+function finish(){
+    var x = score;
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+  score.textContent ="Score: " + score;
+console.log(score);
+
 
 
 
@@ -132,3 +146,4 @@ choiceB.addEventListener("click",checkAnswer);
 choiceC.addEventListener("click",checkAnswer);
 choiceD.addEventListener("click",checkAnswer);
 begin.addEventListener("click", startQuiz);
+finishBtn.addEventListener("click", finish);
