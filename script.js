@@ -19,7 +19,7 @@ let questions = [
     choiceB:"B) Helping Text Manual Language",
     choiceC:"C) Hyper Text Markup Language",
     choiceD:"D) Honer Type Madeup Language",
-    correctAnsw:".c"
+    correctAnsw:"c"
 
 },{
     question:"Which one is a propper function?",
@@ -27,7 +27,7 @@ let questions = [
     choiceB:"'function';",
     choiceC:"function));",
     choiceD:"function();",
-    correctAnsw:".d"
+    correctAnsw:"d"
 
 },{
     question:"",
@@ -97,7 +97,8 @@ function counter(){
 
 
 // This function checks the response to each answer 
-function checkAnswer(answer){
+function checkAnswer(event){
+    answer = event.target.getAttribute('data-value');
     correct = questions[runQuestion].correctAnsw;
 
     if (answer === correct && runQuestion !== lastQuestion){
